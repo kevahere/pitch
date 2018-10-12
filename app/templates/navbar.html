@@ -6,19 +6,15 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="{{ url_for('main.new_pitch') }}">New Pitch</a>
       <a class="nav-item nav-link" href="#">My Profile</a>
        <ul class="nav navbar-nav navbar-right">
         {% if current_user.is_authenticated %}
 
-        <li><a class="nav-item nav-link" href="{{ url_for('main.new_pitch') }}">Submit A Pitch</a></li>
+        <li><a class="nav-item nav-link" href="{{ url_for('main.index') }}">Submit A Pitch</a></li>
 
         <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-        <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
         {% else %}
-        <li><a href="{{url_for('auth.register')}}">Register</a></li>
         <li class="divider"></li>
-        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
         {% endif %}
       </ul>
     </div>
