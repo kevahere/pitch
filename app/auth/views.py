@@ -17,7 +17,7 @@ def login():
 
         flash('Invalid username or Password')
 
-    title = "watchlist login"
+    title = "Watchlist login"
     return render_template('auth/login.html',login_form = login_form,title=title)
 
 @auth.route('/logout')
@@ -34,3 +34,7 @@ def register():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
+        flash('You are now signed up')
+        return redirect(url_for('auth.login'))
+        title = 'Create an account'
+    return render_template('auth/register.html', form = form, title = title)
