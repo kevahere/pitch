@@ -36,5 +36,5 @@ def register():
         db.session.commit()
         flash('You are now signed up')
         return redirect(url_for('auth.login'))
-        title = 'Create an account'
+        title = "Create an account"
     return render_template('auth/register.html', form = form, title = title)
