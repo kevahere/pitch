@@ -3,6 +3,9 @@ import os
 
 class Config:
 
+    #secret key
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
     #email configuration
     MAIL_SERVER ='smtp.googlemail.com'
     MAIL_PORT =587
