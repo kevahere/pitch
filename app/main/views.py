@@ -10,6 +10,7 @@ def index():
     """View root function that returns index"""
     title =  'Home | welcome to pitches'
     return render_template('index.html', title = title)
+
 @main.route('/pitch/new',methods=["GET","POST"])
 def new_pitch():
     form = PitchForm()
