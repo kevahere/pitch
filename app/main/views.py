@@ -36,3 +36,13 @@ def new_comment():
         return redirect(url_for('main.new_comment'))
     comments = Comment.query.all()
     return render_template('form.html', comment_form=comment_form, comment_list=comments)
+
+
+@main.route('/user/<uname>')
+def profile(uname):
+    user = User.query.filter_by(username=uname).first()
+
+    if user is None:
+        abort(404)
+
+    return render_template("profile/profile.html", user=user)
