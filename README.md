@@ -1,4 +1,4 @@
-# Pitch It
+# Pitch
 
 <p align = "center">
     <b>Project Author: Kevin Ahere</b>  
